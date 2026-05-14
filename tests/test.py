@@ -47,5 +47,7 @@ db.init_database()
 # ----------------------- Get Least Recent Posted Project -----------------------
 
 least_recent_project = db.get_least_recent_posted_project()
-print(f"\nLeast recent posted project: ")
-print(f"\nProject Id: {least_recent_project['id']} \nTitle: {least_recent_project['title']} \nTech Stack: {least_recent_project['tech_stack']}")
+print(f"Next project to post about:")
+print(f"  Title: {least_recent_project['title']}")
+print(f"  Stack: {least_recent_project['tech_stack']}")
+print(f"  Last posted: {least_recent_project['last_posted_at']}")
