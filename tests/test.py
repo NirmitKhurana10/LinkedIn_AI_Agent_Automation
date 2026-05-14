@@ -51,3 +51,17 @@ print(f"Next project to post about:")
 print(f"  Title: {least_recent_project['title']}")
 print(f"  Stack: {least_recent_project['tech_stack']}")
 print(f"  Last posted: {least_recent_project['last_posted_at']}")
+
+
+# ----------------------- Update posted at time -----------------------
+
+before = db.get_least_recent_posted_project()
+print(f"Before: next project is '{before['title']}' (last posted: {before['last_posted_at']})")
+
+# Mark it as posted
+db.update_project_posted_at(before['id'])
+
+# Check who's next AFTER the update
+after = db.update_project_posted_at()
+print(f"After: next project is '{after['title']}' (last posted: {after['last_posted_at']})")
+
