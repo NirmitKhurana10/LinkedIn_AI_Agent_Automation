@@ -37,7 +37,15 @@ db.init_database()
 # ----------------------- Test get project -----------------------
 
 
-projects = db.get_projects()
-print(f"Total projects: {len(projects)}")
-for p in projects:
-        print(f"\nProject Id: {p['id']} \nTitle: {p['title']} \nTech Stack: {p['tech_stack']}")
+# projects = db.get_projects()
+# print(f"Total projects: {len(projects)}")
+# for p in projects:
+#         print(f"\nProject Id: {p['id']} \nTitle: {p['title']} \nTech Stack: {p['tech_stack']}")
+
+
+
+# ----------------------- Get Least Recent Posted Project -----------------------
+
+least_recent_project = db.get_least_recent_posted_project()
+print(f"\nLeast recent posted project: ")
+print(f"\nProject Id: {least_recent_project['id']} \nTitle: {least_recent_project['title']} \nTech Stack: {least_recent_project['tech_stack']}")
